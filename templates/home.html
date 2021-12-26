@@ -48,7 +48,7 @@
                             <div class="card-columns">
                                 {% for i in images %}
                                 <div class="card">
-                                    <img class="card-img-top" src="/media/{{i.image}}" alt="Card image cap">
+                                    <img class="card-img-top" src="/static/{{i.image}}" alt="Card image cap">
                                     <div class="card-body">
                                         <!-- <h5 class="card-title">{{i.title}}</h5> -->
                                         <!-- <p class="card-text">{{i.descriptiom}}</p> -->
@@ -110,7 +110,7 @@
     <script>
         function showModalWithImage(imageUrl) {
             $('#image-modal').modal('show')
-            $('#image-show').attr('src', `/media/${imageUrl}`)
+            $('#image-show').attr('src', `/static/${imageUrl}`)
         }
     </script>
     </body>
