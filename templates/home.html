@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <title>My Image Bazaar</title>
+        <title>IMAGES MARKET</title>
     </head>
     <style>
         .bg {
@@ -55,15 +55,19 @@
                                         {% if user.is_authenticated %}
                                         <a href="#" onclick="showModalWithImage('{{i.image}}')"
                                             class="btn btn-primary text-center">View</a>
+                                        <a href="/static/{{i.image}}" class="btn btn-outline ml-2 btn-primary" download="{{i.title}}">Download</a>
+
                                         {% else %}
                                         <button type="button" class="btn btn-outline ml-2 btn-primary"
                                             data-toggle="modal" data-target="#signupmodal">
                                             View
                                         </button>
+                                        <a href="/static/{{i.image}}" class="btn btn-outline ml-2 btn-primary" data-toggle="modal" data-target="#signupmodal" download="{{i.title}}">Download</a>
+                                        
                                         {% endif %}
                                         <!-- <a href="{{i}}" download id="pop">
                                             <button class="btn btn-primary text-center mt-2 mb-2"> Download</button> -->
-                                        </a>
+
                                     </div>
                                 </div>
                                 {% endfor %}

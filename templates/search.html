@@ -59,6 +59,13 @@
                         View
                       </button>
                     </a>
+                    <a
+                      href="/static/{{j.image}}"
+                      class="btn btn-outline ml-2 btn-primary"
+                      download="picture"
+                      >Download</a
+                    >
+
                     {% else %}
                     <button
                       type="button"
@@ -68,11 +75,16 @@
                     >
                       View
                     </button>
-                    {% endif %}
-                    <!--<a href="{{j}}" download>
-                                            <button class="btn btn-primary text-center mt-2 mb-2"> Download</button>
+                    <a
+                      href="/static/{{i.image}}"
+                      class="btn btn-outline ml-2 btn-primary"
+                      data-toggle="modal"
+                      data-target="#signupmodal"
+                      download="{{i.title}}"
+                      >Download</a
+                    >
 
-                                        </a> -->
+                    {% endif %}
                   </div>
                 </div>
 

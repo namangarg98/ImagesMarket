@@ -90,6 +90,9 @@ def signup(request):
         if password1 != password2:
             messages.error(request, "Both passwords don't match")
             return redirect('/')
+        if User.objects.filter(username=username).exists():
+            messages.error(request, "username already exist")
+            return redirect('/')
         # Create the user
         myuser = User.objects.create_user(username, email, password1)
         myuser.first_name = fname

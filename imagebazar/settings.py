@@ -27,6 +27,7 @@ SECRET_KEY = '9s!h)r39)9n35tj9cca&ow=v&$9m2%15xnhhhi^c@gkc@u^wnt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+# DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "imagesbazaar.herokuapp.com", "*"]
 
