@@ -35,11 +35,12 @@ def show_category(request, cid):
     }
     return render(request, "home.html", context)
 
-
+import random
 def search(request):
+    pageNumber = random.randint(1,10)
     query = request.GET['query']
     r = requests.get((
-        "https://api.unsplash.com/search/photos?query={}&page=1&per_page=30&client_id=tGXMmv5bb-DHAXbm3rzLwtk84UtHgnJpXq8PqR_SpKQ").format(query))
+        "https://api.unsplash.com/search/photos?query={}&page={}&per_page=30&client_id=tGXMmv5bb-DHAXbm3rzLwtk84UtHgnJpXq8PqR_SpKQ").format(query,pageNumber))
     data = r.json()
     # print(data)
     # print(data.keys())
@@ -47,7 +48,7 @@ def search(request):
     # print(data['updated_at']) ['cover_photo']
     list_images = []
     for img in data['results']:
-        img_url = img['urls']['regular']
+        img_url = img['links']['download']
         # response = requests.get(img_url)
         list_images.append(img_url)
 

@@ -60,12 +60,12 @@
                       </button>
                     </a>
                     <a
-                      href="/static/{{j.image}}"
+                      href="{{j}}+'&force=true'"
                       class="btn btn-outline ml-2 btn-primary"
-                      download="picture"
-                      >Download</a
+                      download="myImage"
                     >
-
+                      Download
+                    </a>
                     {% else %}
                     <button
                       type="button"
@@ -101,6 +101,12 @@
                       onclick="showModalWithImage('{{i.image}}')"
                       class="btn btn-primary text-center"
                       >View</a
+                    >
+                    <a
+                      href="/static/{{i.image}}"
+                      class="btn btn-outline ml-2 btn-primary"
+                      download="{{i.title}}"
+                      >Download</a
                     >
                   </div>
                 </div>
